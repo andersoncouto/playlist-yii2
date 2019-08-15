@@ -1,4 +1,5 @@
-version: '2'
+version: '3'
+
 services:
   php:
     image: yiisoftware/yii2-php:7.1-apache
@@ -7,3 +8,21 @@ services:
       - ./:/app:delegated
     ports:
       - '8000:80'
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    # command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'playlist'
+      MYSQL_USER: 'root'
+      MYSQL_PASSWORD: ''
+      MYSQL_ROOT_PASSWORD: ''
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    ports:
+      - "3306:3306"
+    volumes:
+      - /var/lib/mysql
+      - ./docker/mysql/config.cnf:/etc/mysql/conf.d/config.cnf
