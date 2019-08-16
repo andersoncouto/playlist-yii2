@@ -16,6 +16,10 @@ class m190815_142826_create_table_artistes extends Migration
             'id' => $this->primaryKey(),
             'name' => $this->string(75)->notNull()
         ]);
+
+        $this->insert('artistes', 
+            ['name' => 'Bob Dylan']
+        );
     }
 
     /**

@@ -16,6 +16,10 @@ class m190815_142004_create_table_genre extends Migration
             'id' => $this->primaryKey(),
             'name' => $this->string(75)->notNull()
         ]);
+
+        $this->insert('genres', 
+            ['name' => 'Folk']
+        );
     }
 
     /**
