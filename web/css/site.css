@@ -144,3 +144,13 @@ a.desc:after {
     padding-bottom: 0;
     padding-top: 0.4em;
 }
+.table-sm a {
+    color: #000 !important;
+}
+.playlist {
+    background-color: #fcfcfc;
+    margin-bottom: 20px;
+}
+label.control-label {
+    font-size: 0.9em;
+}
