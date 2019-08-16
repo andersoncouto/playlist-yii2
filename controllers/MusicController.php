@@ -67,10 +67,10 @@ class MusicController extends Controller
         $model = new Music();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect('/');
         }
 
-        return $this->render('create', [
+        return $this->render('index', [
             'model' => $model,
         ]);
     }
@@ -124,4 +124,5 @@ class MusicController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
 }
